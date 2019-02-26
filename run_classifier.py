@@ -314,7 +314,7 @@ class GermevalBinaryProcessor(DataProcessor):
   def get_labels(self):
     """See base class."""
     return [
-      "OFFENSIVE",
+      "OFFENSE",
       "OTHER"
     ]
 
@@ -332,7 +332,7 @@ class GermevalBinaryProcessor(DataProcessor):
     guid = "%s-%s" % (set_type, tokenization.convert_to_unicode(line[0]))
     text_a = tokenization.convert_to_unicode(line[1])
     if set_type == "test":
-      label = "OFFENSIVE"
+      label = "OFFENSE"
     else:
       label = tokenization.convert_to_unicode(line[-2])
     single_example = InputExample(guid=guid, text_a=text_a, label=label)
